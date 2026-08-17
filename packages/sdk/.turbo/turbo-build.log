@@ -1,0 +1,22 @@
+
+> @requin/sdk@0.0.1 build /Users/camupp/Documents/work/coffup-2/requin-sdk/packages/sdk
+> tsup src/index.ts --format esm,cjs --dts --clean
+
+CLI Building entry: src/index.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.1
+CLI Using tsup config: /Users/camupp/Documents/work/coffup-2/requin-sdk/packages/sdk/tsup.config.ts
+CLI Target: es2022
+CLI Cleaning output folder
+ESM Build start
+CJS Build start
+CJS dist/index.cjs     2.65 KB
+CJS dist/index.cjs.map 5.39 KB
+CJS ⚡️ Build success in 27ms
+ESM dist/index.js     2.63 KB
+ESM dist/index.js.map 5.37 KB
+ESM ⚡️ Build success in 27ms
+DTS Build start
+DTS ⚡️ Build success in 484ms
+DTS dist/index.d.ts  404.00 B
+DTS dist/index.d.cts 404.00 B

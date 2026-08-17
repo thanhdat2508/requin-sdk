@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "requin-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo build --concurrency 16",
+    "dev": "turbo dev --cache=local:r, remote:r --concurrency 25 --continue",
+    "test": "turbo run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.33.0",
+  "devDependencies": {
+    "turbo": "^2.10.9",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}
