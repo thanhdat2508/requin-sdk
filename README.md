@@ -4,7 +4,7 @@
         <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://www.coffup.tech/logo.png">
       <source media="(prefers-color-scheme: light)" srcset="https://www.coffup.tech/logo.png">
-      <img alt="Supabase Logo" width="300" src="https://www.coffup.tech/logo.png">
+      <img alt="Requin Logo" width="300" src="https://www.coffup.tech/logo.png">
     </picture>
   </a>
 
@@ -98,7 +98,7 @@ Testing varies per package. See the top-level [TESTING.md](docs/TESTING.md) for 
 
 ### API Documentation
 
-- **[Auth SDK](./packages/core/auth-js/README.md)** - Authentication and user management
+- **[SDK](./packages/sdk)** - SDK for connect to Requin AI Agent
 
 ## 📄 License
 
@@ -106,15 +106,11 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## 🆘 Support
 
-- **Documentation**: [supabase.com/docs](https://supabase.com/docs)
-- **Community**: [GitHub Discussions](https://github.com/supabase/supabase/discussions)
-- **Issues**: [GitHub Issues](https://github.com/supabase/supabase-js/issues)
-- **Discord**: [Supabase Discord](https://discord.supabase.com)
-
----
+- **Documentation**: [docs.coffup.tech](https://docs.coffup.tech/)
+- **Community**: [GitHub Discussions](https://github.com/thanhdat2508/requin-sdk/discussions)
 
 <div align="center">
 
-**[Website](https://supabase.com) • [Documentation](https://supabase.com/docs) • [Community](https://github.com/supabase/supabase/discussions) • [Twitter](https://twitter.com/supabase)**
+**[Website](https://www.coffup.tech) • [Documentation](https://docs.coffup.tech/)**
 
 </div>
