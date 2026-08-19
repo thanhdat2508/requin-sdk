@@ -9,21 +9,27 @@ const mcpServer = createMcpServer(
 mcpServer.tools({
   tools: [
     {
-      name: "Get local time",
-      description: "Get local time",
-      parameters: z.object({}),
-      execute: () => {
-        return new Date().toISOString();
+      name: "get_shipping_order",
+      description: "Lấy thông tin đơn giao",
+      parameters: z.object({ orderId: z.string() }),
+      privacy: {
+        customPrefix: "SECURE",
+        patterns: [
+          "order_address",
+          /^diem_tra_/i,
+          (key, val) => key === "internal_note",
+        ],
       },
-    },
-    {
-      name: "Get weather",
-      description: "Get weather in a city",
-      parameters: z.object({
-        city: z.string(),
-      }),
-      execute: ({ city }: { city: string }) => {
-        return `Weather in ${city} is sunny`;
+      execute: async () => {
+        return {
+          orderId: "ORD-999",
+          status: "shipping",
+          email: "khach@gmail.com",
+          phone: "0912345678",
+          order_address: "Kho A - Cảng Cát Lái",
+          diem_tra_hang: "Bưu cục 10",
+          internal_note: "Khách VIP không gọi trưa",
+        };
       },
     },
   ],

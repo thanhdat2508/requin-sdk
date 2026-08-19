@@ -2,21 +2,21 @@
 > @requin/mcp@0.0.1 build /Users/camupp/Documents/work/coffup-2/requin-sdk/packages/mcp
 > tsup src/index.ts --format esm,cjs --dts --clean
 
-CLI Building entry: src/index.ts
-CLI Using tsconfig: tsconfig.json
-CLI tsup v8.5.1
-CLI Using tsup config: /Users/camupp/Documents/work/coffup-2/requin-sdk/packages/mcp/tsup.config.ts
-CLI Target: es2022
-CLI Cleaning output folder
-ESM Build start
-CJS Build start
-CJS dist/index.cjs     4.90 KB
-CJS dist/index.cjs.map 10.40 KB
-CJS ⚡️ Build success in 37ms
-ESM dist/index.js     4.60 KB
-ESM dist/index.js.map 10.27 KB
-ESM ⚡️ Build success in 37ms
+[34mCLI[39m Building entry: src/index.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.5.1
+[34mCLI[39m Using tsup config: /Users/camupp/Documents/work/coffup-2/requin-sdk/packages/mcp/tsup.config.ts
+[34mCLI[39m Target: es2022
+[34mCLI[39m Cleaning output folder
+[34mESM[39m Build start
+[34mCJS[39m Build start
+[32mESM[39m [1mdist/index.js     [22m[32m4.75 KB[39m
+[32mESM[39m [1mdist/index.js.map [22m[32m10.60 KB[39m
+[32mESM[39m ⚡️ Build success in 44ms
+[32mCJS[39m [1mdist/index.cjs     [22m[32m5.05 KB[39m
+[32mCJS[39m [1mdist/index.cjs.map [22m[32m10.75 KB[39m
+[32mCJS[39m ⚡️ Build success in 44ms
 DTS Build start
-DTS ⚡️ Build success in 585ms
+DTS ⚡️ Build success in 757ms
 DTS dist/index.d.ts  1.22 KB
 DTS dist/index.d.cts 1.22 KB

@@ -12,6 +12,7 @@ import {
   RequinToolDefinition,
 } from "@requin/core";
 import { WebsocketTransport } from "./mcp-transport";
+import { PrivacyVault, log } from "@requin/core";
 
 /**
  * MCP server to expose tools to models
@@ -80,7 +81,11 @@ export class McpAgentServer implements RequinMcpServerInstance {
       try {
         const validatedArgs = targetTool.parameters.parse(toolArgs ?? {});
 
-        const result = await targetTool.execute(validatedArgs);
+        const rawData = await targetTool.execute(validatedArgs);
+
+        const privacyVault = new PrivacyVault(targetTool.privacy);
+
+        const maskedData = privacyVault.mask(rawData);
 
         if (!validatedArgs.success) {
           return {
@@ -88,7 +93,9 @@ export class McpAgentServer implements RequinMcpServerInstance {
               {
                 type: "text",
                 text:
-                  typeof result === "string" ? result : JSON.stringify(result),
+                  typeof maskedData === "string"
+                    ? maskedData
+                    : JSON.stringify(maskedData),
               },
             ],
             isError: true,
@@ -96,7 +103,7 @@ export class McpAgentServer implements RequinMcpServerInstance {
         }
 
         return {
-          content: [{ type: "text", text: JSON.stringify(result) }],
+          content: [{ type: "text", text: JSON.stringify(maskedData) }],
         };
       } catch (error: any) {
         return {
@@ -114,7 +121,8 @@ export class McpAgentServer implements RequinMcpServerInstance {
     this.transport = new WebsocketTransport(wsUrl, this.apiKey);
 
     await this.mcpServer.connect(this.transport);
-    console.log(`[Requin SDK] Connected to ${this.endpoint}`);
+
+    log(`[RequinJS] Connected to ${this.endpoint}`);
   }
 
   public async close(): Promise<void> {

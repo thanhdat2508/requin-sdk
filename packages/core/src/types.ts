@@ -1,12 +1,18 @@
 import { z } from "zod";
+import { PatternConfig } from "./vault/private";
 
 export interface RequinToolDefinition<
   TSchema extends z.ZodTypeAny = z.ZodTypeAny,
+  TOutput extends z.ZodTypeAny = z.ZodTypeAny,
 > {
   name: string;
   description: string;
   parameters: TSchema;
-  execute: (args: z.infer<TSchema>) => Promise<unknown> | unknown;
+  outputSchema?: TOutput;
+  privacy?: PatternConfig;
+  execute: (
+    args: z.infer<TSchema>,
+  ) => Promise<z.infer<TOutput>> | z.infer<TOutput>;
 }
 
 export interface RegisterToolsOptions {
